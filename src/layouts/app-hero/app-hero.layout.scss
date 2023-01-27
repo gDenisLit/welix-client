@@ -1,0 +1,102 @@
+.main-hero {
+
+    .hero__inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 80vh;
+
+        @include for-small-layout {
+            margin-top: -100px;
+            flex-direction: row;
+        }
+
+        @include for-narrow-layout {
+            margin-top: 0;
+            align-items: center;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: auto;
+
+            @include for-small-layout {
+                width: 60%;
+            }
+        }
+
+        .text-box {
+            width: 100%;
+            font-family: Nunito-bold;
+            padding-right: 10vw;
+
+            @include for-small-layout {
+                padding-right: 0;
+                width: 50%;
+            }
+
+            .hero-heading {
+                line-height: em(14px);
+                margin-block-end: em(5px);
+                // font-size: rem(76px);
+                font-size: rem(52px);
+                font-family: Nunito-bold;
+
+                @include for-medium-layout {
+                    font-size: rem(52px);
+                }
+
+                @include for-narrow-layout {
+                    font-size: rem(76px);
+                    // background-color: blue;
+                }
+
+                @include for-normal-layout {
+                    font-size: rem(76px);
+                    // background-color: green;
+                }
+
+                @include for-wide-layout {
+                    font-size: rem(98px);
+                    // background-color: yellow;
+                }
+            }
+
+            .hero-subheading {
+                font-size: em(14px);
+                color: rgb(138, 135, 135);
+                margin-block-end: em(52px);
+
+                @include for-narrow-layout {
+                    font-size: em(24px);
+                }
+            }
+        }
+
+        .hero-btn {
+            text-decoration: none;
+            font-family: Nunito-bold;
+            text-transform: uppercase;
+            font-size: em(12px);
+            letter-spacing: em(1.3px);
+            padding: em(24px) em(38px);
+            cursor: pointer;
+            background-color: $primary-color;
+            border: 1px solid $primary-color;
+            color: $light-color;
+
+            @include for-narrow-layout {
+                font-size: em(16px);
+                padding: em(24px) em(38px);
+            }
+
+            &:hover {
+                background-color: #fff;
+                color: $primary-color;
+            }
+        }
+    }
+}
