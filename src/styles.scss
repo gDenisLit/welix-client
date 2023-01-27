@@ -1,3 +1,29 @@
-h1 {
-    color: pink;
-}
+// SETUP
+@import './assets/styles/setup/typography';
+@import './assets/styles/setup/functions';
+@import './assets/styles/setup/mixins';
+@import './assets/styles/setup/variables';
+
+// BASE
+@import './assets/styles/basic/base';
+@import './assets/styles/basic/helpers';
+@import './assets/styles/basic/spacing';
+@import './assets/styles/basic/layout';
+
+// Templates
+@import './assets/styles/templates/header';
+@import './assets/styles/templates/omnifood';
+@import './assets/styles/templates/betaa';
+@import './assets/styles/templates/making-diff';
+@import './assets/styles/templates/design';
+@import './assets/styles/templates/cake';
+@import './assets/styles/templates/yoga';
+@import './assets/styles/templates/coming-soon';
+
+// Components
+@import './components/app/app-header/app-header.scss';
+@import './components/app/nav-links/nav-links.scss';
+
+// Layouts
+@import './layouts/home-page/home-page.layout.scss';
+@import './layouts/app-header/app-header.layout.scss';

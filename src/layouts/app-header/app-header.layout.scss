@@ -1,0 +1,15 @@
+.main-header {
+
+    .header__inner {
+        z-index: 10;
+        height: rem(100px);
+
+        .nav-wrapper {
+            display: none;
+
+            @include for-medium-layout {
+                display: block;
+            }
+        }
+    }
+}

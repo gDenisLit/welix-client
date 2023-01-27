@@ -12,10 +12,4 @@
 
 <template>
     <router-view />
-    <!-- <notifications 
-        position="bottom right" 
-        :width="500" 
-        classes="notification" 
-        :style="{}" 
-    /> -->
 </template>

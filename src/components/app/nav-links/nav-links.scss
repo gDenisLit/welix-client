@@ -1,0 +1,34 @@
+.user-img {
+    height: rem(55px);
+    width: rem(55px);
+    margin-left: rem(60px);
+}
+
+.header-link {
+    text-decoration: none;
+    font-family: Nunito-bold;
+    text-transform: uppercase;
+    color: $dark-color;
+    font-size: em(12px);
+    letter-spacing: em(1.3px);
+    padding: em(24px) em(38px);
+    cursor: pointer;
+
+    @include for-narrow-layout {
+        font-size: em(16px);
+    }
+
+    &.link-dashboard {
+        padding-right: 0;
+    }
+}
+
+.link-signup {
+    border: 1px solid $dark-color;
+    border-radius: rem(24px);
+
+    &:hover {
+        background-color: $dark-color;
+        color: $light-color;
+    }
+}

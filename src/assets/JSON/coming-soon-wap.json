@@ -1,0 +1,115 @@
+[
+    {
+        "name": "Coming-soon",
+        "imgUrl": "https://cdn.discordapp.com/attachments/989109569018007568/1003662877326053428/husen-siraaj-lWxavMfS6SA-unsplash.jpg?width=507&height=676",
+        "type": "coming-soon",
+        "style": {},
+        "class": "coming-soon",
+        "createdBy": {
+            "_id": "5dd0891d4c995bgfhghh527",
+            "fullname": "Lukas Rudrof",
+            "imgUrl": "img.jpg"
+        },
+        "usersData": {
+            "contacts": [
+                {
+                    "email": "user@user.com",
+                    "msg": "Please send me stuff",
+                    "at": 123
+                }
+            ],
+            "signups": [
+                {
+                    "email": "user@user.com",
+                    "at": 123
+                }
+            ]
+        },
+        "theme": "vivid",
+        "cmps": [
+            {
+                "id": "f222gh1",
+                "type": "wap-header",
+                "classes": [
+                    "coming-soon",
+                    "flex",
+                    "justify-between",
+                    "full"
+                ],
+                "info": {
+                    "logoTxt": {
+                        "type": "txt",
+                        "txt": "LOGO",
+                        "style": {}
+                    },
+                    "nav": {
+                        "id": "CCD3333FF2",
+                        "type": "wap-nav",
+                        "style": {},
+                        "classes": [
+                            "coming-soon-nav"
+                        ],
+                        "info": {
+                            "links": [
+                                {
+                                    "type": "txt",
+                                    "txt": "About",
+                                    "link": "#About",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "txt",
+                                    "txt": "Gallery",
+                                    "link": "#Gallery",
+                                    "style": {}
+                                },
+                                {
+                                    "type": "txt",
+                                    "txt": "Contact",
+                                    "link": "#Contact",
+                                    "style": {}
+                                }
+                            ]
+                        }
+                    }
+                },
+                "style": {}
+            },
+            {
+                "id": "gf##$33333325",
+                "type": "wap-hero",
+                "classes": [
+                    "coming-soon-hero"
+                ],
+                "info": {
+                    "heading": {
+                        "type": "txt",
+                        "txt": "COMING SOON",
+                        "style": {}
+                    },
+                    "subHeading": {
+                        "type": "txt",
+                        "txt": "We will be celebrating the launch of our new site very soon!",
+                        "style": {}
+                    },
+                    "btns": [
+                        {
+                            "type": "btn",
+                            "txt": "Notify Me!",
+                            "link": "#notifyMe",
+                            "style": {}
+                        }
+                    ],
+                    "imgs": {
+                        "type": "imgs",
+                        "urls": [
+                            "https://cdn.discordapp.com/attachments/989109569018007568/1003662877326053428/husen-siraaj-lWxavMfS6SA-unsplash.jpg?width=507&height=676"
+                        ],
+                        "style": {}
+                    }
+                },
+                "style": {}
+            }
+        ]
+    }
+]
