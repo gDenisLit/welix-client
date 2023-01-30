@@ -41,7 +41,6 @@
             .hero-heading {
                 line-height: em(14px);
                 margin-block-end: em(5px);
-                // font-size: rem(76px);
                 font-size: rem(52px);
                 font-family: Nunito-bold;
 
@@ -51,17 +50,14 @@
 
                 @include for-narrow-layout {
                     font-size: rem(76px);
-                    // background-color: blue;
                 }
 
                 @include for-normal-layout {
                     font-size: rem(76px);
-                    // background-color: green;
                 }
 
                 @include for-wide-layout {
                     font-size: rem(98px);
-                    // background-color: yellow;
                 }
             }
 
