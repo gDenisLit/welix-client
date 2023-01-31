@@ -1,0 +1,8 @@
+.wap-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: em(24px);
+    min-width: 100%;
+    margin: 0 auto;
+    padding-bottom: rem(50px);
+}
