@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { store } from '@/store'
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import templatePageLayout from '@/layouts/template-page/template-page.layout.vue'
 import appHeader from '@/components/app/app-header/app-header.vue'
 import wapList from '@/components/app/wap-list/wap-list.vue'
 import type { Wap } from '@/models/Wap.model'
 
+const router = useRouter()
 store.dispatch({
     type: 'loadWaps',
     filterBy: { isTemplate: true }
@@ -19,12 +21,11 @@ const editWap = (wap: Wap) => {
 }
 
 const previewWap = (wapId: string) => {
-    console.log('wapId', wapId)
-    // let routeData = router.resolve({
-    //     name: 'wap-details',
-    //     params: { id: props.wap?._id },
-    // })
-    // window.open(routeData.href, '_blank')
+    let routeData = router.resolve({
+        name: 'details',
+        params: { id: wapId },
+    })
+    window.open(routeData.href, '_blank')
 }
 </script>
 

@@ -11,5 +11,6 @@ export interface Wap {
     usersData: Object
     theme: string
     isPublic: boolean
-    cmps: Cmp[]
+    cmps: Cmp[],
+    class: string
 }

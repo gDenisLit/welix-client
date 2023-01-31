@@ -22,7 +22,7 @@ async function query(filterBy: Object) {
     return await httpService.get('wap', filterBy)
 }
 
-async function getById(wapId: string) {
+async function getById(wapId: string | string[]): Promise<Wap> {
     return httpService.get(`wap/${wapId}`)
 }
 
