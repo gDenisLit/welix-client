@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import aTooltip from './a-tooltip.vue'
 const props = defineProps({
     to: String,
     content: String
