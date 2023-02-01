@@ -11,7 +11,7 @@ const props = defineProps({
     <div class="wap-preview" v-if="wap">
         <div class="wap-preview-img">
             <div class="wap-preview-btns">
-                <a @click="$emit('editWap', wap)">Edit</a>
+                <a @click="$emit('editWap', wap?._id)">Edit</a>
                 <a @click="$emit('previewWap', wap?._id)">View</a>
             </div>
             <img :src="wap.imgUrl" alt="" />

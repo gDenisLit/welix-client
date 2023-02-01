@@ -1,7 +1,5 @@
-// import { socketService } from '../../services/socket.service.js'
 import { utilService } from '../../services/util.service.js'
 import { wapService } from '../../services/wap.service.js'
-
 import type { Cmp } from "@/models/Cmp.model"
 import type { Wap } from "@/models/Wap.model"
 
@@ -125,7 +123,7 @@ export default {
         redo(state: State) {
             if (!state.nextActions.length) return
             if (!state.currWap) return
-            
+
             const { cmps } = state.currWap
             const prevAction = state.nextActions.pop()
 
@@ -155,9 +153,10 @@ export default {
         },
         async loadWap(context: any, payload: any) {
             const { commit } = context
-            const { wapId } = payload
+            const { id } = payload
             try {
-                const wap = await wapService.getById(wapId)
+                let wap = await wapService.getById(id)
+                if (!wap) wap = wapService.getEmptyWap()
                 commit({ type: 'setCurrWap', wap })
             }
             catch (err) {

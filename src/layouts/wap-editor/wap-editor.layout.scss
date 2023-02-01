@@ -1,0 +1,9 @@
+.editor {
+    height: 100vh;
+    overflow: hidden;
+
+    &-main {
+        overflow-y: hidden;
+        transition: all 0.5s;
+      }
+}

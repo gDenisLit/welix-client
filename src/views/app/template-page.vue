@@ -16,8 +16,8 @@ const waps = computed(() => {
     return store.getters.getWaps
 })
 
-const editWap = (wap: Wap) => {
-    console.log('wap', wap)
+const editWap = (wapId: Wap) => {
+    router.push(`/editor/${wapId}`)
 }
 
 const previewWap = (wapId: string) => {

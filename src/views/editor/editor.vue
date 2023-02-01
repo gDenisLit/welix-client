@@ -1,15 +1,21 @@
 <script setup lang="ts">
-import { wapService } from '@/services/wap.service';
-import { onMounted, shallowRef } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-const route = useRoute()
-const { id } = route.params
+import { useStore } from 'vuex'
+import wapEditorLayout from '@/layouts/wap-editor/wap-editor.layout.vue'
 
-let wap = shallowRef()
-onMounted(async () => {
-    wap.value = await wapService.getById(id)
-})
+const store = useStore()
+const route = useRoute()
+
+const { id } = route.params
+store.dispatch({ type: 'loadWap', id })
+const wap = computed(() => store.getters.getCurrWap)
 </script>
 
 <template>
+    <wap-editor-layout>
+        <template #header>
+            <h1>Wap editor!</h1>
+        </template>
+    </wap-editor-layout>
 </template>
