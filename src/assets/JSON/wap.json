@@ -29,7 +29,7 @@
         "cmps": [
             {
                 "id": "fhngh1",
-                "type": "wap-header",
+                "type": "wapHeader",
                 "classes": [
                     "betaa-header",
                     "flex",
@@ -84,7 +84,7 @@
             },
             {
                 "id": "gbfgg",
-                "type": "wap-hero",
+                "type": "wapHero",
                 "classes": [
                     "betaa-hero",
                     "full",
@@ -125,7 +125,7 @@
             },
             {
                 "id": "jjyuh",
-                "type": "wap-container",
+                "type": "wapContainer",
                 "classes": [
                     "betaa",
                     "betaa-container",
@@ -196,7 +196,7 @@
                     "betaa-txt",
                     "betaa-layout"
                 ],
-                "type": "wap-text",
+                "type": "wapText",
                 "info": {
                     "tag": {
                         "type": "txt",

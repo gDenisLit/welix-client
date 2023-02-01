@@ -79,7 +79,7 @@ function getCurrState(cmpToSave: Cmp, wap: Wap, action: string) {
     return { idx, cmp: wap.cmps[idx], action }
 }
 
-function getEmptyWap(createdBy: User, name: string = '') {
+function getEmptyWap(createdBy: User = {}, name: string = ''): Wap {
     return {
         name,
         imgUrl: '',
@@ -94,6 +94,8 @@ function getEmptyWap(createdBy: User, name: string = '') {
         theme: '',
         cmps: [],
         isPublic: false,
+        style: '',
+        class: ''
     }
 }
 

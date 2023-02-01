@@ -1,11 +1,9 @@
 import { httpService } from './http.service'
-import type { UserService } from '../models/UserService.model'
 import type { User } from '@/models/User.model'
-// import { socketService } from './socket.service'
 
 const LOGGED_IN_USER = 'user'
 
-export const userService: UserService = {
+export const userService = {
     login,
     logout,
     signup,
@@ -36,7 +34,6 @@ async function update(user: User) {
 
 async function login(userCred: User) {
     const user = await httpService.post('auth/login', userCred)
-    // socketService.emit('set-user-socket', user._id)
     saveLocalUser(user)
     return user
 }

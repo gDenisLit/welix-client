@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { computed, onMounted } from 'vue'
-import type { Wap } from '@/models/Wap.model'
+import { onMounted, shallowRef } from 'vue'
 import { wapService } from '@/services/wap.service'
 import wapDetailsLayout from '@/layouts/wap-details/wap-details.layout.vue'
 import wapDetails from '@/components/editor/wap-details/wap-details.vue'
@@ -9,24 +8,16 @@ import wapDetails from '@/components/editor/wap-details/wap-details.vue'
 const route = useRoute()
 const { id } = route.params
 
-let wap: Wap
+let wap = shallowRef()
 onMounted(async () => {
-    wap = await wapService.getById(id)
-})
-
-const getWap = computed(() => {
-    return wap
-})
-
-const getClass = computed(() => {
-    return wap.class
+    wap.value = await wapService.getById(id)
 })
 </script>
 
 <template>
-    <wap-details-layout v-if="getWap" :class="getClass">
+    <wap-details-layout :class="wap?.class" v-if="wap">
         <template #wap>
-            <wap-details :wap="getWap" />
+            <wap-details :wap="wap" />
         </template>
     </wap-details-layout>
 </template>

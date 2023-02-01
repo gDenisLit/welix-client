@@ -7,7 +7,7 @@ export interface Wap {
     imgUrl: string
     type: string
     style: Object
-    createdBy: User
+    createdBy?: User
     usersData: Object
     theme: string
     isPublic: boolean
