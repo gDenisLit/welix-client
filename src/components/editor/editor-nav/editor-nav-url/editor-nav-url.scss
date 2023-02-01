@@ -1,0 +1,47 @@
+.editor-nav-url {
+    width: 95%;
+    // border-right: 1px solid;
+    padding-right: em(20px);
+    padding: em(8px);
+
+    // border-right: 1px solid rgba(128, 128, 128, 0.26);
+    @include for-medium-layout {
+        width: 75%;
+    }
+
+    div {
+        .icon {
+            margin-inline-end: em(5px);
+            color: #adb5bd;
+        }
+
+        border-radius: em(20px);
+        padding: em(4px) em(20px);
+        background-color: rgba(128, 128, 128, 0.082);
+
+        .http {
+            color: #4263eb;
+        }
+
+        .heroku-url {
+            display: none;
+
+            @include for-medium-layout {
+                display: inline;
+            }
+        }
+
+        .my-site {
+            color: rgb(204, 0, 255);
+            margin-inline-end: rem(20px);
+        }
+
+        .choose-domain {
+            display: none;
+
+            @include for-medium-layout {
+                display: inl;
+            }
+        }
+    }
+}

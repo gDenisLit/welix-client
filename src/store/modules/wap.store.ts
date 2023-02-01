@@ -6,6 +6,7 @@ import type { Wap } from "@/models/Wap.model"
 interface State {
     waps: Wap[] | null
     currWap: Wap | null
+    currWapName: string | null
     cmpToEdit: Cmp | null
     elToEdit: any | null
     prevActions: any[]
@@ -16,6 +17,7 @@ export default {
     state: {
         waps: null,
         currWap: null,
+        currWapName: null,
         cmpToEdit: null,
         elToEdit: null,
         prevActions: [],
@@ -27,6 +29,9 @@ export default {
         },
         getCurrWap(state: State) {
             return state.currWap
+        },
+        getCurrWapName(state: State) {
+            return state.currWap?.name
         },
         cmpToEdit(state: State) {
             return state.cmpToEdit
@@ -47,6 +52,7 @@ export default {
         },
         setCurrWap(state: State, data: any) {
             state.currWap = data.wap
+            state.currWapName = data.wap.name
         },
         setCmpToEdit(state: State, data: any) {
             state.cmpToEdit = data.cmp

@@ -1,0 +1,46 @@
+.back {
+    padding-right: em(22px);
+    // border-right: 1px solid rgba(128, 128, 128, 0.26);
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .back-link {
+        color: #868e96;
+        font-size: em(22px);
+        cursor: pointer;
+
+        &:hover {
+            color: $dark-color;
+        }
+    }
+}
+
+.view-port {
+    display: none;
+    padding: 0 em(10px);
+    height: 100%;
+
+    @include for-medium-layout {
+        display: flex;
+    }
+
+    .icon {
+        padding: em(4px);
+        border-radius: em(5px);
+        font-size: em(22px);
+        margin-inline-end: em(10px);
+        cursor: pointer;
+        color: #868e96;
+
+        &:hover {
+            color: $dark-color;
+        }
+
+        &.active {
+            // background-color: rgba(20, 42, 243, 0.237);
+            background-color: rgba($primary-color, 35%);
+            color: $dark-color;
+        }
+    }
+}
