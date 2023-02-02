@@ -29,7 +29,10 @@ const handleLogin = async () => {
             <app-header :user="user" />
         </template>
         <template #login-form>
-            <login-form :credentials="credentials" @login="handleLogin" />
+            <login-form 
+                :credentials="credentials" 
+                @login="handleLogin" 
+            />
         </template>
     </login-page-layout>
 </template>
