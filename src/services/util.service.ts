@@ -5,6 +5,7 @@ export const utilService = {
     getRandomColor,
     makeId,
     delay,
+    getEditorTools
 }
 
 function delay(ms = 1500) {
@@ -44,4 +45,27 @@ function getRandomIntInc(min: number, max: number) {
     min = Math.ceil(min)
     max = Math.floor(max)
     return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function getEditorTools() {
+    return [
+        {
+            type: 'section',
+            class: '{ active: state.activeTool === \'section\' && props.isToolOpen }',
+            title: 'Add Section',
+            icon: 'fa-light fa-circle-plus'
+        },
+        {
+            type: 'theme',
+            class: '{ active: state.activeTool === \'theme\' && props.isToolOpen }',
+            title: 'Themes',
+            icon: 'fa-light fa-palette'
+        },
+        {
+            type: 'edit',
+            class: '{ active: state.activeTool === \'edit\' && props.isToolOpen }',
+            title: 'Edit',
+            icon: 'fa-light fa-pen-to-square'
+        },
+    ]
 }
