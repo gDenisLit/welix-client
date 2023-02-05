@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import type { User } from '@/models/User.model';
-import type { Wap } from '@/models/Wap.model';
-import { store } from '@/store';
+import type { User } from '@/models/User.model'
+import type { Wap } from '@/models/Wap.model'
+import { store } from '@/store'
 import { reactive, computed } from 'vue'
 import { useRouter } from 'vue-router'
+import editorToolBarNav from './editor-tool-bar-nav/editor-tool-bar-nav.vue'
 
 const router = useRouter()
 const emit = defineEmits([
     'wapSaved'
 ])
+
 const state = reactive({
     items: null,
     isOpen: false,
@@ -122,7 +124,7 @@ const login = async (credentials: User) => {
         // })
     }
 }
-const signup = async (credentials:User) => {
+const signup = async (credentials: User) => {
     try {
         const user = await store.dispatch({ type: 'signup', credentials })
 
@@ -173,6 +175,7 @@ const isEditorOpen = computed(() => {
 <template>
     <div class="tool-bar flex">
         <editor-tool-bar-nav @saved="saveWap" @setTool="openTool" :isToolOpen="state.isOpen" />
+        
         <section class="tool-bar-actions" :class="isEditorOpen">
             <div class="tool-bar-actions__header flex justify-between">
                 <h2>{{ title }}</h2>
@@ -181,9 +184,9 @@ const isEditorOpen = computed(() => {
                     <font-awesome-icon icon="fa-light fa-xmark-large" />
                 </p>
             </div>
-            <el-editor v-if="state.tool === 'edit'" />
+            <!-- <el-editor v-if="state.tool === 'edit'" />
             <editor-tool-sections v-if="state.tool === 'section'" :cmps="currWap.cmps" />
-            <editor-tool-theme v-if="state.tool === 'theme'" />
+            <editor-tool-theme v-if="state.tool === 'theme'" /> -->
         </section>
     </div>
     <!-- <div>

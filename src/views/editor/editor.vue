@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import { useRoute, useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 import wapEditorLayout from '@/layouts/wap-editor/wap-editor.layout.vue'
 import editorHeader from '@/components/editor/editor-header/editor-header.vue'
 import editorNav from '@/components/editor/editor-nav/editor-nav.vue'
-import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { useStore } from 'vuex'
+import editorToolBar from '@/components/editor/editor-tool-bar/editor-tool-bar.vue'
 
 const store = useStore()
 const route = useRoute()
@@ -12,7 +12,6 @@ const router = useRouter()
 
 const { id } = route.params
 store.dispatch({ type: 'loadWap', id })
-const wap = computed(() => store.getters.getCurrWap)
 </script>
 
 <template>
@@ -22,6 +21,9 @@ const wap = computed(() => store.getters.getCurrWap)
         </template>
         <template #nav>
             <editor-nav />
+        </template>
+        <template #tool-bar>
+            <editor-tool-bar />
         </template>
     </wap-editor-layout>
 </template>

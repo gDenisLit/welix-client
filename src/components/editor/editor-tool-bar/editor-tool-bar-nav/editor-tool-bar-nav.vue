@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
-import editorToolBarNavMobile from './mobile-nav/editor-tool-bar-nav-mobile.vue'
-import editorToolBarNavTools from './tools/editor-tool-bar-nav-tools.vue'
-import editorToolBarNavActions from './actions/editor-tool-bar-nav-actions.vue'
+import { reactive } from 'vue'
+import editorToolBarNavMobile from './cmps/editor-tool-bar-nav-mobile.vue'
+import editorToolBarNavTools from './cmps/editor-tool-bar-nav-tools.vue'
+import editorToolBarNavActions from './cmps/editor-tool-bar-nav-actions.vue'
 import { utilService } from '@/services/util.service'
 
 const emit = defineEmits([
@@ -12,11 +12,12 @@ const props = defineProps({
     isToolOpen: Boolean
 })
 
-const tools = ref(utilService.getEditorTools())
 const state = reactive({
     activeTool: '',
     isMobileMenu: false
 })
+const tools = utilService.getEditorTools(state, props)
+
 
 const toggleMobileMenu = () => {
     state.isMobileMenu = !state.isMobileMenu

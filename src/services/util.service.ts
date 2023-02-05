@@ -1,3 +1,5 @@
+import type { Tool } from "@/models/Tool.model"
+
 export const utilService = {
     saveToStorage,
     loadFromStorage,
@@ -5,8 +7,9 @@ export const utilService = {
     getRandomColor,
     makeId,
     delay,
-    getEditorTools
+    getEditorTools,
 }
+
 
 function delay(ms = 1500) {
     return new Promise(resolve => {
@@ -47,23 +50,29 @@ function getRandomIntInc(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-function getEditorTools() {
+function getEditorTools(state: any, props: any): Tool[] {
     return [
         {
             type: 'section',
-            class: '{ active: state.activeTool === \'section\' && props.isToolOpen }',
+            class: {
+                active: state.activeTool === 'section' && props.isToolOpen
+            },
             title: 'Add Section',
             icon: 'fa-light fa-circle-plus'
         },
         {
             type: 'theme',
-            class: '{ active: state.activeTool === \'theme\' && props.isToolOpen }',
+            class: {
+                active: state.activeTool === 'theme' && props.isToolOpen
+            },
             title: 'Themes',
             icon: 'fa-light fa-palette'
         },
         {
             type: 'edit',
-            class: '{ active: state.activeTool === \'edit\' && props.isToolOpen }',
+            class: {
+                active: state.activeTool === 'edit' && props.isToolOpen
+            },
             title: 'Edit',
             icon: 'fa-light fa-pen-to-square'
         },

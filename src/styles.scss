@@ -21,16 +21,21 @@
 @import './assets/styles/templates/coming-soon';
 
 // Components
+
+// App
 @import './components/app/app-header/app-header.scss';
 @import './components/app/nav-links/nav-links.scss';
 @import './components/app/login-form/login.form.scss';
 @import './components/app/wap-list/wap-list.scss';
 @import './components/app/wap-preview/wap-preview.scss';
+//Editor
 @import './components/editor/wap-details/wap-details.scss';
 @import './components/editor/editor-header/editor-header.scss';
+// Editor-nav
 @import './components/editor/editor-nav/editor-nav.scss';
 @import './components/editor/editor-nav/editor-nav-btns/editor-nav-btns.scss';
 @import './components/editor/editor-nav/editor-nav-url/editor-nav-url.scss';
+//Editor-tool-bar
 @import './components/editor/editor-tool-bar/editor-tool-bar.scss';
 @import './components/editor/editor-tool-bar/editor-tool-bar-nav/editor-tool-bar-nav.scss';
 
