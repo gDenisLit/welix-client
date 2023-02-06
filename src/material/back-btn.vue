@@ -17,3 +17,25 @@ const props = defineProps({
         </a-tooltip>
     </div>
 </template>
+
+<style lang="scss">
+@import '@/styles.scss';
+
+.back {
+    padding-right: em(22px);
+    // border-right: 1px solid rgba(128, 128, 128, 0.26);
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .back-link {
+        color: #868e96;
+        font-size: em(22px);
+        cursor: pointer;
+
+        &:hover {
+            color: $dark-color;
+        }
+    }
+}
+</style>
