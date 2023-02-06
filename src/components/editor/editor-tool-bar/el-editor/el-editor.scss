@@ -1,0 +1,51 @@
+.el-editor {
+    padding: rem(18px) em(98px) rem(18px) rem(18px);
+    margin: 0 auto;
+    overflow-y: auto;
+    height: 48vh;
+
+    @include for-medium-layout {
+        height: 85vh;
+        max-width: rem(300px);
+        padding: rem(18px) em(30px) rem(18px) rem(4px);
+    }
+
+    .undo {
+        font-size: rem(18px);
+        margin-inline-end: rem(16px);
+        cursor: pointer;
+    }
+
+    &-inner {
+        .extra-tools {
+            font-size: rem(18px);
+            justify-content: flex-end;
+            align-items: center;
+            padding-block-end: rem(12px);
+            margin-block-end: rem(8px);
+            border-bottom: 1px solid $light-color3;
+
+            .tool {
+                cursor: pointer;
+
+                &:first-child {
+                    margin-inline-end: rem(12px);
+                }
+            }
+        }
+
+        .box {
+            margin-block-end: rem(8px);
+            max-width: 280px;
+
+            .ant-slider-track {
+                background-color: #1971c2;
+            }
+
+            .title {
+                margin-block-end: rem(5px);
+                min-width: 42%;
+            }
+        }
+    }
+}

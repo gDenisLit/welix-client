@@ -65,19 +65,21 @@ const setFilter = (filterBy: string, idx: number) => {
 </script>
 
 <template>
-    <section class="flex sections">
-        <div class="tool-bar-actions__labels flex flex-column">
+    <section class="editor-tool-sections flex ">
 
-            <div class="tool-bar-actions__label flex items-center" v-for="(label, idx) in labels" :key="label.id"
+        
+        <div class="editor-tool-sections__labels flex flex-column">
+
+            <div class="editor-tool-sections__label flex items-center" v-for="(label, idx) in labels" :key="label.id"
                 :class="{ selected: label.selected }">
-                <span class="tool-bar-actions__label-text" :class="{ selected: label.selected }"
+                <span class="editor-tool-sections__label-text" :class="{ selected: label.selected }"
                     @click="setFilter(label.type, idx)">{{ label.title }}
                 </span>
             </div>
         </div>
 
-        <div class="tool-bar-actions__options flex flex-column">
-            <p class="tool-bar-actions__options-title">{{ title }}</p>
+        <div class="editor-tool-sections__options flex flex-column">
+            <p class="editor-tool-sections__options-title">{{ title }}</p>
 
             <Container :get-child-payload="getChildPayload" group-name="1" behaviour="copy">
                 <Draggable v-for="cmp in cmps" :key="cmp.id" @click.stop>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
 import wapEditorLayout from '@/layouts/wap-editor/wap-editor.layout.vue'
 import editorHeader from '@/components/editor/editor-header/editor-header.vue'
@@ -8,11 +8,10 @@ import editorToolBar from '@/components/editor/editor-tool-bar/editor-tool-bar.v
 
 const store = useStore()
 const route = useRoute()
-const router = useRouter()
 
 const { id } = route.params
 store.dispatch({ type: 'loadWap', id })
-store.dispatch({ type: 'loadCmps'})
+store.dispatch({ type: 'loadCmps' })
 </script>
 
 <template>
