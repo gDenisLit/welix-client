@@ -6,7 +6,7 @@ import editorToolBarNavActions from './cmps/editor-tool-bar-nav-actions.vue'
 import { utilService } from '@/services/util.service'
 
 const emit = defineEmits([
-    'setTool', 'saved'
+    'setTool'
 ])
 const props = defineProps({
     isToolOpen: Boolean
