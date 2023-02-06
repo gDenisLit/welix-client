@@ -4,4 +4,5 @@ export interface Cmp {
     classes: string[]
     info: any
     style: any
+    thumbnail: string
 }

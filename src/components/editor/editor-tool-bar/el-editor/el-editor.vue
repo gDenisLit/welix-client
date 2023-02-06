@@ -11,7 +11,7 @@ const el = computed(() => {
     return store.getters.elToEdit
 })
 const type = computed(() => {
-    return el?.value.type ? 'el-editor' + el.value.type : ''
+    return el.value?.type ? 'el-editor' + el.value.type : ''
 })
 
 const undo = () => {
