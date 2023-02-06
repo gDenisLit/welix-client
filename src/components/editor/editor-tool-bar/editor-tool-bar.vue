@@ -6,6 +6,7 @@ import { useRouter } from 'vue-router'
 import editorToolBarNav from './editor-tool-bar-nav/editor-tool-bar-nav.vue'
 import elEditor from './el-editor/el-editor.vue'
 import editorToolSections from './editor-tool-sections/editor-tool-sections.vue'
+import editorToolTheme from './editor-tool-theme/editor-tool-theme.vue'
 
 const router = useRouter()
 const emit = defineEmits([
@@ -188,7 +189,7 @@ const isEditorOpen = computed(() => {
             </div>
             <el-editor v-if="state.tool === 'edit'" />
             <editor-tool-sections v-if="state.tool === 'section'" />
-            <!-- <editor-tool-theme v-if="state.tool === 'theme'" /> -->
+            <editor-tool-theme v-if="state.tool === 'theme'" />
         </section>
     </div>
     <!-- <div>

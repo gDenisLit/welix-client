@@ -8,6 +8,7 @@ export const utilService = {
     makeId,
     delay,
     getEditorTools,
+    getThemes,
 }
 
 
@@ -75,6 +76,67 @@ function getEditorTools(state: any, props: any): Tool[] {
             },
             title: 'Edit',
             icon: 'fa-light fa-pen-to-square'
+        },
+    ]
+}
+
+function getThemes() {
+    return [
+        {
+            title: 'Defualt',
+            desc: 'Template default colors',
+            mainBgc: '#ffffff',
+            cmpBgc: '',
+            color: '',
+        },
+        {
+            title: 'Calming',
+            desc: 'Calm & easy-going',
+            mainBgc: '#827397',
+            cmpBgc: '#C9BBCF',
+            color: '#635666',
+        },
+        {
+            title: 'Nostalgic',
+            desc: 'Cozy & comfortable',
+            mainBgc: '#F7D9D9',
+            cmpBgc: '#FFEFEF',
+            color: '#362706',
+        },
+        {
+            title: 'Warm',
+            desc: 'Modern & pleasant',
+            mainBgc: ' rgb(198, 204, 202)',
+            cmpBgc: ' rgb(248, 244, 241)',
+            color: '#85603F',
+        },
+        {
+            title: 'Vivid',
+            desc: 'Bright & Expressive',
+            mainBgc: '#dd857e',
+            cmpBgc: '#dea4a0',
+            color: '#f1d6d4',
+        },
+        {
+            title: 'Business',
+            desc: 'Nifty & sophisticated',
+            mainBgc: '#0c8599',
+            cmpBgc: 'rgb(255, 255, 255)',
+            color: '#45504e',
+        },
+        {
+            title: 'Retro Vibrant',
+            desc: 'Hip, mod & stylish',
+            mainBgc: 'rgba(11, 122, 157, 0.63)',
+            cmpBgc: 'rgb(248, 244, 241)',
+            color: 'rgba(235, 224, 121, 0.74)',
+        },
+        {
+            title: 'Earthy',
+            desc: 'Subtle & Natural',
+            mainBgc: '#f4edd2',
+            cmpBgc: '#d4b8ac',
+            color: '#a27f88',
         },
     ]
 }
