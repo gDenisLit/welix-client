@@ -12,6 +12,7 @@ const router = useRouter()
 
 const { id } = route.params
 store.dispatch({ type: 'loadWap', id })
+store.dispatch({ type: 'loadCmps'})
 </script>
 
 <template>

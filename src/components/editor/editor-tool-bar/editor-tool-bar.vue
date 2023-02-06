@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { User } from '@/models/User.model'
-import type { Wap } from '@/models/Wap.model'
 import { store } from '@/store'
 import { reactive, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import editorToolBarNav from './editor-tool-bar-nav/editor-tool-bar-nav.vue'
 import elEditor from './el-editor/el-editor.vue'
+import editorToolSections from './editor-tool-sections/editor-tool-sections.vue'
 
 const router = useRouter()
 const emit = defineEmits([
@@ -27,6 +27,7 @@ const currUser = computed(() => {
 const currWap = computed(() => {
     return store.getters.getCurrWap
 })
+
 const title = computed(() => {
     switch (state.tool) {
         case 'section':
@@ -186,7 +187,7 @@ const isEditorOpen = computed(() => {
                 </p>
             </div>
             <el-editor v-if="state.tool === 'edit'" />
-            <!-- <editor-tool-sections v-if="state.tool === 'section'" :cmps="currWap.cmps" /> -->
+            <editor-tool-sections v-if="state.tool === 'section'" />
             <!-- <editor-tool-theme v-if="state.tool === 'theme'" /> -->
         </section>
     </div>

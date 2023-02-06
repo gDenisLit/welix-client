@@ -25,7 +25,7 @@ export default {
             const { cmps } = data
             state.cmps = cmps
         },
-        setFilter(state: State, data: any) {
+        setFilterBy(state: State, data: any) {
             const { filterBy } = data
             state.filterBy = filterBy
         },
@@ -35,11 +35,15 @@ export default {
             const { commit } = context
             try {
                 const cmps = await cmpService.query()
-                console.log('store', cmps)
                 commit({ type: 'setCmps', cmps })
             } catch (err) {
                 console.log(err)
             }
         },
+        setFilterBy(context: any, payload: any) {
+            const { commit } = context
+            const { filterBy } = payload
+            commit({ type: 'setFilterBy', filterBy })
+        }
     },
 }
