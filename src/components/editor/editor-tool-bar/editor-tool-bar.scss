@@ -45,30 +45,5 @@
                 height: initial;
             }
         }
-
-        &__header {
-            border-top: $primary-color 5px solid;
-            border-bottom: solid 1px #f1f3f5;
-            padding: rem(6px) rem(16px);
-            align-items: center;
-
-            .inner {
-                .undo {
-                    margin-inline-end: rem(10px);
-                    font-size: rem(16px);
-                }
-            }
-
-            h2 {
-                font-family: Roboto-Bold, sans-serif;
-                // margin-inline-end: rem(180px);
-            }
-
-            .close {
-                font-size: rem(12px);
-                cursor: pointer;
-                padding-bottom: (5px);
-            }
-        }
     }
 }

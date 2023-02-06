@@ -3,6 +3,7 @@ import type { User } from '@/models/User.model'
 import { store } from '@/store'
 import { reactive, computed } from 'vue'
 import { useRouter } from 'vue-router'
+import editorToolBarHeader from './editor-tool-bar-header/editor-tool-bar-header.vue'
 import editorToolBarNav from './editor-tool-bar-nav/editor-tool-bar-nav.vue'
 import elEditor from './el-editor/el-editor.vue'
 import editorToolSections from './editor-tool-sections/editor-tool-sections.vue'
@@ -27,17 +28,6 @@ const currUser = computed(() => {
 })
 const currWap = computed(() => {
     return store.getters.getCurrWap
-})
-
-const title = computed(() => {
-    switch (state.tool) {
-        case 'section':
-            return 'Add Section'
-        case 'edit':
-            return 'Edit'
-        case 'theme':
-            return 'Pick a theme'
-    }
 })
 
 const showModal = () => {
@@ -180,31 +170,10 @@ const isEditorOpen = computed(() => {
         <editor-tool-bar-nav @saved="saveWap" @setTool="openTool" :isToolOpen="state.isOpen" />
 
         <section class="tool-bar-actions" :class="isEditorOpen">
-            <div class="tool-bar-actions__header flex justify-between">
-                <h2>{{ title }}</h2>
-
-                <p class="close" @click="state.isOpen = false">
-                    <font-awesome-icon icon="fa-light fa-xmark-large" />
-                </p>
-            </div>
+            <editor-tool-bar-header :state="state" @closeTool="state.isOpen = false" />
             <el-editor v-if="state.tool === 'edit'" />
             <editor-tool-sections v-if="state.tool === 'section'" />
             <editor-tool-theme v-if="state.tool === 'theme'" />
         </section>
     </div>
-    <!-- <div>
-        <a-modal wrapClassName="login-form" v-model:visible="visible" :style="{ maxWidth: '370px' }">
-            <login @login="login" @signup="signup" />
-            <template #footer></template>
-        </a-modal>
-
-        <a-modal wrapClassName="choose-site-name" v-model:visible="visibleName" :style="{ maxWidth: '520px' }">
-            <form class="choose-name flex flex-column" @submit.prevent="changeWapName">
-                <label for="">You're almost done!</label>
-                <input v-model="siteName" type="text" placeholder="Choose site name" />
-                <button>Publish</button>
-            </form>
-            <template #footer :style="{ display: 'none', borderTop: 'none' }"></template>
-        </a-modal>
-    </div> -->
 </template>
